@@ -1,0 +1,12 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/* Style rules for <body> */
+body {
+  font-family: "Poppins", sans-serif; /* Use Google Font */
+  margin: 0;
+  padding: 0;
+  background-color: #121212; /* Dark background color */
+  color: #fff; /* White text color */
+  height: 100vh; /* Make <body> as tall as the viewport */
+}

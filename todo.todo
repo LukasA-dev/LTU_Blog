@@ -1,0 +1,42 @@
+TODO:
+Moment 3 - Inläggshantering
+    Steg 3: Hantera Inlägg
+    1. Skapa Inlägg:
+    - Implementera ett formulär där användare kan skriva och publicera nya inlägg.
+    - Inkludera fält för titel, innehåll och eventuellt kategorier eller taggar.
+
+    2. Redigera Inlägg:
+    - Ge användare möjlighet att redigera sina inlägg.
+    - Hämta befintligt inlägg från databasen och fyll ett formulär med dess data.
+    - Användaren ska kunna ändra innehållet.
+
+    3. Ta Bort Inlägg:
+    - Implementera en funktion för att ta bort inlägg.
+    - Inkludera en bekräftelseprompt för att förhindra oavsiktlig borttagning.
+
+    4. Validering och Säkerhet:
+    - Se till att formulärdata valideras både på klient- och server-sidan.
+    - Förhindra skadlig kod och SQL-injektioner.
+
+    Steg 4: Frontend-integration
+    1. Länk till Backend:
+    - Tillhandahåll en länk eller knapp för användare att logga in och komma åt sin dashboard på bloggens frontend.
+
+    2. Visa Inlägg:
+    - Säkerställ att användarens skapade inlägg visas korrekt på bloggens frontend.
+
+    Steg 5: Testning och Felsökning
+    1. Säkerhetstester:
+    - Testa applikationen för vanliga säkerhetsproblem som SQL-injektioner och Cross-Site Scripting (XSS).
+
+2. Funktionalitetstester:
+   - Testa alla aspekter av backend för att säkerställa att inloggning, inläggshantering och utloggning fungerar som förväntat.
+
+Moment 4 - Nyhetshantering
+1. Skapa en funktion för hantering av nyheter.
+   - Implementera funktionen för att visa senast publicerade inlägg eller nyheter på bloggens frontend.
+
+Moment 5 - Bild och filhantering
+1. Lägg till funktionalitet för bloggaren att ladda upp bilder.
+   - Skapa en mekanism för bloggaren att ladda upp bilder som kan användas på bloggens sidor.
+   - Spara bilderna på serverns filsystem och relatera dem till bloggarens inlägg eller sidor i databasen.
