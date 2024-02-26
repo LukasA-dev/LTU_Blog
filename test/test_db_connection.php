@@ -1,12 +1,12 @@
 <?php
 // Inkludera db.php för att kunna använda dess funktioner
-require 'test_db.php'; // Anpassa sökvägen till din db.php-fil
+require 'test_db.php';
 
 // Anslut till databasen
 $db = db_connect();
 
 // Skriv en enkel SQL-fråga för att hämta data
-$query = "SELECT * FROM test_users"; // Använd din testtabell
+$query = "SELECT * FROM test_users"; // Använd testtabell
 $result = db_select($db, $query); // Använder db_select-funktionen från db.php
 
 // Kontrollera om vi fick något resultat

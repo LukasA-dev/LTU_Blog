@@ -1,7 +1,7 @@
-<!-- Menu content goes here -->
+<!-- Meny -->
 <nav>
     <ul>
         <li><a href="index.php">Hem</a></li>
-        <!-- More links for your menu -->
+        <!-- Fler länkar meny -->
     </ul>
 </nav>

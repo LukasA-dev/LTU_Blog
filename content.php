@@ -1,5 +1,5 @@
-<!-- Content area where blog posts will be displayed -->
+<!-- Här visas blog-content -->
 <div id="blog-content">
     <h2>Senaste Inläggen</h2>
-    <!-- PHP code to display posts from the database -->
+    <!-- PHP kod för att visa inlägg från databasen -->
 </div>

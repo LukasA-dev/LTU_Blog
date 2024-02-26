@@ -1,5 +1,5 @@
-<!-- Information area about the blog or blogger -->
+<!-- Information om bloggen eller bloggaren -->
 <aside id="blog-info">
     <h3>Om Bloggaren</h3>
-    <!-- PHP code to display info about the blogger -->
+    <!-- PHP kod för att visa information om bloggaren -->
 </aside>
