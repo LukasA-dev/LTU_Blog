@@ -1,4 +1,5 @@
 # Webbutveckling II - Skripspråk och Databaser
+Projektet är **INTE** klart och jag arbetar på fortfarande på det :)
 
 ## Projekt
 Bloggplattformen är slutprojektet i Webbutveckling II, "Labb 4a - Utveckla en blogg". 
