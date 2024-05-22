@@ -1,4 +1,4 @@
 <!-- Footer innehåll -->
 <footer>
-    <p>&copy; <?= date("Y"); ?> Din Blogg. Alla rättigheter förbehållna.</p>
+    <p>&copy; <?= date("Y"); ?> Bloggstället. Alla rättigheter förbehållna.</p>
 </footer>

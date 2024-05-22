@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </ul>
         </nav>
         <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) : ?>
-            <p>Inloggad som: <?= htmlspecialchars($_SESSION['username']) ?></p>
+            <p class="logged-in-info">Inloggad som: <?= htmlspecialchars($_SESSION['username']) ?></p>
         <?php endif; ?>
     </header>
     <!-- Resten av sidans innehåll följer... -->
