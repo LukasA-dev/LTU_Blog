@@ -1,11 +1,11 @@
 <?php
 session_start();
 require_once '../includes/db.php';
-require_once 'header.php';
+require_once 'header.php'; // Include the admin header
 
 // Check if the user is logged in
 if (!isset($_SESSION['loggedin'])) {
-    header('Location: login.php');
+    header('Location: ../public/login.php');
     exit;
 }
 
@@ -33,9 +33,9 @@ $posts = db_select($db, $query);
         <ul>
             <?php foreach ($posts as $post) : ?>
                 <li>
-                    <a href="view_post.php?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['title']) ?></a>
-                    <a href="edit_post.php?id=<?= $post['id'] ?>">Redigera</a>
-                    <a href="delete_post.php?id=<?= $post['id'] ?>" onclick="return confirm('Är du säker på att du vill radera detta inlägg?')">Radera</a>
+                    <a href="../public/content.php?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['title']) ?></a>
+                    <a href="edit_post.php?id=<?= $post['id'] ?>" class="icon"><img src="../images/edit.png" alt="Edit"></a>
+                    <a href="delete_post.php?id=<?= $post['id'] ?>" class="icon" onclick="return confirm('Är du säker på att du vill radera detta inlägg?')"><img src="../images/trash.png" alt="Delete"></a>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -45,6 +45,6 @@ $posts = db_select($db, $query);
 </html>
 
 <?php
-// Close the database connection
 db_disconnect($db);
+require_once '../includes/footer.php'; // Include the admin footer
 ?>

@@ -1,29 +1,23 @@
 <?php
+require_once '../includes/db.php'; // Inkludera databasanslutning
+
 session_start();
-require_once '../includes/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve user input
     $username = db_escape($db, $_POST['username']);
     $password = $_POST['password'];
 
-    // Create SQL query to fetch the user with the given username
-    $query = "SELECT id, username, password FROM user WHERE username = '$username'";
-    $user = db_select($db, $query);
+    $query = "SELECT * FROM user WHERE username = '$username'";
+    $result = db_select($db, $query);
 
-    if ($user && password_verify($password, $user[0]['password'])) {
-        // Password is correct, set session variables
+    if ($result && password_verify($password, $result[0]['password'])) {
         $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $user[0]['username'];
-        $_SESSION['user_id'] = $user[0]['id'];
-
-        // Redirect to user's dashboard or homepage
+        $_SESSION['username'] = $result[0]['username'];
+        $_SESSION['user_id'] = $result[0]['id'];
         header("Location: dashboard.php");
     } else {
-        // Incorrect username or password
-        echo "Incorrect username or password.";
+        echo "Felaktigt användarnamn eller lösenord. Försök igen.";
     }
 
-    // Close the database connection
     db_disconnect($db);
 }

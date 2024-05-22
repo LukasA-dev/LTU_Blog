@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../includes/db.php';
-require_once 'header.php';
+require_once '../includes/header.php';
 
 // Check if the post ID is provided in the URL
 if (!isset($_GET['id'])) {

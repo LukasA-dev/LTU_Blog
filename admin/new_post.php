@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../includes/db.php';
-require_once 'header.php';
+require_once 'header.php'; // Include the admin header
 
 // Check if the user is logged in
 if (!isset($_SESSION['loggedin'])) {

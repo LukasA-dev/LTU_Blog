@@ -15,7 +15,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <body>
     <header>
-        <!-- Admin-specifik navigation och logotyp etc. -->
         <nav>
             <ul>
                 <li><a href="dashboard.php">Dashboard</a></li>
@@ -23,7 +22,6 @@ if (session_status() == PHP_SESSION_NONE) {
                 <li><a href="manage_posts.php">Hantera Inlägg</a></li>
                 <li><a href="logout.php">Logga ut</a></li>
             </ul>
-
         </nav>
         <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) : ?>
             <p>Inloggad som: <?= htmlspecialchars($_SESSION['username']) ?></p>
