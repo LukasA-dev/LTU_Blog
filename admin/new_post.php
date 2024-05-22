@@ -16,13 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $query = "INSERT INTO post (title, content, userId) VALUES ('$title', '$content', '$user_id')";
     db_query($db, $query);
-    header('Location: dashboard.php');
+    header('Location: manage_posts.php');
 }
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container">
         <h2>Create New Post</h2>
-        <form action="create_post.php" method="POST">
+        <form action="new_post.php" method="POST">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
 

@@ -21,13 +21,13 @@ $posts = db_select($db, $query);
 
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Hantera Inlägg</title>
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
     <div class="container">
-        <h2>Dashboard</h2>
+        <h2>Hantera Inlägg</h2>
         <a href="new_post.php">Skapa Inlägg</a>
         <h3>Dina Inlägg</h3>
         <ul>

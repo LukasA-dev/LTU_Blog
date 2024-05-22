@@ -9,17 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Kryptera lösenordet
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Skapa SQL-fråga för att infoga den nya användaren
-    $query = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
+    $query = "INSERT INTO user (username, password) VALUES ('$username', '$hashed_password')";
 
     // Kör SQL-frågan
     $result = db_query($db, $query);
 
     if ($result) {
-        // Registrering lyckades, omdirigera till inloggningssidan eller någon annanstans
         header("Location: login.php");
     } else {
-        // Hantera fel (t.ex. användarnamnet är redan taget)
         echo "Ett fel uppstod. Försök igen.";
     }
 

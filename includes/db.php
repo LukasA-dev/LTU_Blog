@@ -65,3 +65,6 @@ function db_import($connection, $filename, $dropOldTables = FALSE)
         } while ($connection->more_results() && $connection->next_result());
     }
 }
+
+// Global database connection
+$db = db_connect();

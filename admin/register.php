@@ -1,9 +1,25 @@
-<form action="register_user.php" method="post">
-    <label for="username">Användarnamn:</label>
-    <input type="text" id="username" name="username" required>
+<!DOCTYPE html>
+<html lang="sv">
 
-    <label for="password">Lösenord:</label>
-    <input type="password" id="password" name="password" required>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
 
-    <input type="submit" value="Registrera">
-</form>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="register_user.php" method="POST">
+            <label for="username">Användarnamn:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Lösenord:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Registrera</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,3 +1,9 @@
+<?php
+// Ensure the session is started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -17,6 +23,13 @@
                 <li><a href="manage_posts.php">Hantera Inlägg</a></li>
                 <li><a href="logout.php">Logga ut</a></li>
             </ul>
+
         </nav>
+        <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) : ?>
+            <p>Inloggad som: <?= htmlspecialchars($_SESSION['username']) ?></p>
+        <?php endif; ?>
     </header>
     <!-- Resten av sidans innehåll följer... -->
+</body>
+
+</html>
