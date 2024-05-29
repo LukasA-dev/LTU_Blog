@@ -47,24 +47,5 @@ function db_select($connection, $query)
     return $data;
 }
 
-// Importerar tabeller till databasen
-function db_import($connection, $filename, $dropOldTables = FALSE)
-{
-    // Läser in SQL-filen
-    $sql = file_get_contents($filename);
-    if ($dropOldTables) {
-        // Lägg till logik för att ta bort gamla tabeller här
-    }
-    // Kör SQL-kommandona från filen
-    if ($connection->multi_query($sql)) {
-        do {
-            // Använd next_result för att hantera flera SQL-kommandon i en fil
-            if ($result = $connection->store_result()) {
-                $result->free();
-            }
-        } while ($connection->more_results() && $connection->next_result());
-    }
-}
-
 // Global database connection
 $db = db_connect();

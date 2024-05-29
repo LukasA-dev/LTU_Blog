@@ -1,2 +1,2 @@
-# Ignore TODOs
-**/*.todo
+# Ignore database credentials
+/includes/db_credentials.php

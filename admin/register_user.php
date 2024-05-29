@@ -16,10 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = db_query($db, $query);
 
     if ($result) {
-        // Registrering lyckades, omdirigera till inloggningssidan eller någon annanstans
+        // Registrering lyckades
         header("Location: ../public/login.php");
     } else {
-        // Hantera fel (t.ex. användarnamnet är redan taget)
         echo "Ett fel uppstod. Försök igen.";
     }
 
