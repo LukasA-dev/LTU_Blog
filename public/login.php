@@ -14,6 +14,11 @@ require_once '../includes/header.php'; // Include the frontend header
 <body>
     <div class="container">
         <h2>Login</h2>
+        <?php if (isset($_SESSION['error_message'])) : ?>
+            <p class="error-message"><?= htmlspecialchars($_SESSION['error_message']) ?></p>
+            <?php unset($_SESSION['error_message']); // Clear the error message after displaying it 
+            ?>
+        <?php endif; ?>
         <form action="../admin/authenticate_user.php" method="post">
             <label for="username">Användarnamn:</label>
             <input type="text" id="username" name="username" required>
@@ -21,7 +26,6 @@ require_once '../includes/header.php'; // Include the frontend header
             <input type="password" id="password" name="password" required>
             <input type="submit" value="Logga in">
         </form>
-        <p>Har du inget konto? <a href="register.php">Registrera här.</a></p>
     </div>
 </body>
 

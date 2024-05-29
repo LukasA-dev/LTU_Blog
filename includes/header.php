@@ -1,3 +1,8 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -9,14 +14,21 @@
 
 <body>
     <header>
-        <h1>Bloggstället</h1>
-        <!-- Add navigation links here -->
         <nav>
-            <ul>
-                <li><a href="index.php">Hem</a></li>
-                <li><a href="feed.php">Inlägg</a></li>
-                <li><a href="login.php">Logga in</a></li>
-                <li><a href="register.php">Registrera</a></li>
+            <ul class="nav-links">
+                <li><a href="../public/index.php">Home</a></li>
+                <li><a href="../public/feed.php">Feed</a></li>
+                <li><a href="../public/all_bloggers.php">All Bloggers</a></li>
+                <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) : ?>
+                    <li><a href="../admin/dashboard.php" class="admin-link">Admin Dashboard</a></li>
+                    <li class="logged-in-info"><a href="../public/blogger_profile.php?id=<?= $_SESSION['user_id'] ?>">Inloggad som: <?= htmlspecialchars($_SESSION['username']) ?></a></li>
+                <?php else : ?>
+                    <li><a href="../public/login.php">Login</a></li>
+                    <li><a href="../public/register.php">Register</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
+</body>
+
+</html>

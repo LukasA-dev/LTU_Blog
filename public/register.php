@@ -18,7 +18,7 @@ require_once '../includes/header.php'; // Include the frontend header
             <label for="username">Användarnamn:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Lösenord:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required minlength="6">
             <input type="submit" value="Registrera">
         </form>
     </div>

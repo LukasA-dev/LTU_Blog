@@ -28,7 +28,12 @@ $posts = db_select($db, $query);
 <body>
     <div class="container">
         <h2>Dashboard</h2>
-        <a href="new_post.php">Skapa Inlägg</a>
+        <nav>
+            <ul>
+                <li><a href="new_post.php">Skapa Inlägg</a></li>
+                <li><a href="edit_profile.php">Redigera Profil</a></li>
+            </ul>
+        </nav>
         <h3>Dina Inlägg</h3>
         <ul>
             <?php foreach ($posts as $post) : ?>

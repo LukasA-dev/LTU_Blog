@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/db.php'; // Inkludera databasanslutning
+require_once '../includes/db.php'; // Include database connection
 
 session_start();
 
@@ -15,8 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['username'] = $result[0]['username'];
         $_SESSION['user_id'] = $result[0]['id'];
         header("Location: dashboard.php");
+        exit;
     } else {
-        echo "Felaktigt användarnamn eller lösenord. Försök igen.";
+        $_SESSION['error_message'] = "Felaktigt användarnamn eller lösenord. Försök igen.";
+        header("Location: ../public/login.php");
+        exit;
     }
 
     db_disconnect($db);
